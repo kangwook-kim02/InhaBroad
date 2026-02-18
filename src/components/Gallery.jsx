@@ -4,12 +4,12 @@ import "./Gallery.css";
 
 const Gallery = () => {
   const images = [
-    "/public/img/activity-work.png",
-    "/public/img/activity-dog.png",
-    "/public/img/activity-work2.png",
-    "/public/img/activity-assemble.png",
-    "/public/img/activity-festi.png",
-    "/public/img/activity-mt.jpg",
+    "/img/activity-work.png",
+    "/img/activity-dog.png",
+    "/img/activity-work2.png",
+    "/img/activity-assemble.png",
+    "/img/activity-festi.png",
+    "/img/activity-mt.jpg",
   ];
 
   return (

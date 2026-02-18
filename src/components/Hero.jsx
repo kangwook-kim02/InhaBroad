@@ -7,7 +7,7 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <section className="hero">
-      <img src="./public/img/mt-2025.jpg" alt="Volunteer" className="hero-bg" />
+      <img src="/img/mt-2025.jpg" alt="Volunteer" className="hero-bg" />
 
       <div className="hero-content">
         <div className="hero-badge">2026-1 신입 부원 모집</div>
