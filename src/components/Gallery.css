@@ -1,0 +1,12 @@
+.insta_btn {
+  background: none;
+  border: none;
+  color: #10b981;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.insta_btn:hover {
+  color: black;
+}

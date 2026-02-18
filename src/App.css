@@ -1,0 +1,333 @@
+/* src/App.css */
+
+/* --- 1. 기본 설정 (Reset & Variables) --- */
+:root {
+  --primary-color: #1e3a8a;
+  --secondary-color: #fb7185; /* 웜 오렌지 (따뜻함) */
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --bg-light: #fdfbf7; /* 아주 연한 아이보리 */
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- 2. 네비게이션 바 --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: var(--primary-color);
+}
+
+.mobile-menu-btn {
+  display: none; /* PC에선 숨김 */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 모바일 메뉴 드롭다운 */
+.mobile-dropdown {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- 3. Hero 섹션 (메인) --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5); /* 이미지 어둡게 */
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.hero-badge {
+  background-color: var(--primary-color);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-highlight {
+  color: var(--secondary-color);
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #d97706;
+  transform: translateY(-3px);
+}
+
+/* --- 4. About 섹션 --- */
+.section {
+  padding: 100px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  background-color: #ecfdf5; /* 연한 그린 */
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+/* --- 5. Gallery 섹션 --- */
+.gallery-bg {
+  background-color: #f3f4f6;
+}
+
+.gallery-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #ddd;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.1);
+}
+
+/* --- 6. Join 섹션 --- */
+.join-section {
+  background: linear-gradient(135deg, var(--primary-color), #0d9488);
+  color: white;
+  text-align: center;
+}
+
+.join-btn {
+  background-color: white;
+  color: var(--primary-color);
+  padding: 18px 50px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-top: 30px;
+  transition: 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #f0fdf4;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 7. Footer --- */
+.footer {
+  background-color: #111827;
+  color: #9ca3af;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* --- 8. 반응형 (모바일) --- */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  } /* 메뉴 숨김 */
+  .mobile-menu-btn {
+    display: block;
+  } /* 햄버거 버튼 표시 */
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .card-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr; /* 1열로 변경 */
+  }
+
+  .gallery-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

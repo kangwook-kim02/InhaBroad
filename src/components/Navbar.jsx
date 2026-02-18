@@ -1,0 +1,77 @@
+import React, { useState } from "react";
+import { Link } from "react-scroll";
+import { Menu, X } from "lucide-react";
+import "./Navbar.css";
+
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <nav className="navbar">
+      <div className="nav-container">
+        <div className="nav-logo" onClick={() => window.scrollTo(0, 0)}>
+          인하브로드
+        </div>
+
+        {/* PC 메뉴 */}
+        <ul className="nav-menu">
+          {[
+            {
+              id: "about",
+              label: "소개",
+            },
+            {
+              id: "gallery",
+              label: "갤러리",
+            },
+            {
+              id: "join",
+              label: "지원하기",
+            },
+          ].map((item) => (
+            <li key={item.id}>
+              <Link
+                to={item.id.toLowerCase()}
+                smooth={true}
+                duration={500}
+                className="nav-item"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* 모바일 햄버거 버튼 */}
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* 모바일 드롭다운 */}
+      {isMenuOpen && (
+        <div className="mobile-dropdown">
+          {["About", "Gallery", "Join"].map((item) => (
+            <Link
+              key={item}
+              to={item.toLowerCase()}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              onClick={() => setIsMenuOpen(false)}
+              className="nav-item"
+              style={{ display: "block", padding: "10px 0" }}
+            >
+              {item}
+            </Link>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
