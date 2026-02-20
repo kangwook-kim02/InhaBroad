@@ -54,10 +54,23 @@ const Navbar = () => {
       {/* 모바일 드롭다운 */}
       {isMenuOpen && (
         <div className="mobile-dropdown">
-          {["About", "Gallery", "Join"].map((item) => (
+          {[
+            {
+              id: "about",
+              label: "소개",
+            },
+            {
+              id: "gallery",
+              label: "갤러리",
+            },
+            {
+              id: "join",
+              label: "지원하기",
+            },
+          ].map((item) => (
             <Link
-              key={item}
-              to={item.toLowerCase()}
+              key={item.id}
+              to={item.id.toLowerCase()}
               smooth={true}
               duration={500}
               offset={-70}
@@ -65,7 +78,7 @@ const Navbar = () => {
               className="nav-item"
               style={{ display: "block", padding: "10px 0" }}
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </div>
