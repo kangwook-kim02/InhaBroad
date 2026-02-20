@@ -5,6 +5,20 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuList = [
+    {
+      id: "about",
+      label: "소개",
+    },
+    {
+      id: "gallery",
+      label: "갤러리",
+    },
+    {
+      id: "join",
+      label: "지원하기",
+    },
+  ];
 
   return (
     <nav className="navbar">
@@ -15,20 +29,7 @@ const Navbar = () => {
 
         {/* PC 메뉴 */}
         <ul className="nav-menu">
-          {[
-            {
-              id: "about",
-              label: "소개",
-            },
-            {
-              id: "gallery",
-              label: "갤러리",
-            },
-            {
-              id: "join",
-              label: "지원하기",
-            },
-          ].map((item) => (
+          {menuList.map((item) => (
             <li key={item.id}>
               <Link
                 to={item.id.toLowerCase()}
@@ -54,20 +55,7 @@ const Navbar = () => {
       {/* 모바일 드롭다운 */}
       {isMenuOpen && (
         <div className="mobile-dropdown">
-          {[
-            {
-              id: "about",
-              label: "소개",
-            },
-            {
-              id: "gallery",
-              label: "갤러리",
-            },
-            {
-              id: "join",
-              label: "지원하기",
-            },
-          ].map((item) => (
+          {menuList.map((item) => (
             <Link
               key={item.id}
               to={item.id.toLowerCase()}
