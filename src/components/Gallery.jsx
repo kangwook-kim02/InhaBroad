@@ -20,7 +20,7 @@ const Gallery = () => {
         </div>
         <a href="https://www.instagram.com/inhabroad/">
           <button className="insta_btn">
-            인스타그램 더보기{" "}
+            인스타그램 더보기
             <Instagram size={16} style={{ marginLeft: "5px" }} />
           </button>
         </a>
